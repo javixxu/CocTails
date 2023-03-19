@@ -40,6 +40,8 @@ public class Cliente : MonoBehaviour{
     public void setZonaCliente(HayCliente hayCliente) { zona=hayCliente;if (zona == null) Debug.Log("PUTA MIERDA"); }
     public void init(){
         estado = Estado.IENDO;
+        agent.enabled= true;
+        agent.ResetPath();
         agent.SetDestination(zona.transform.position);
     }
 }

@@ -31,7 +31,7 @@ public class GenerararClientes : MonoBehaviour
         }
     }
     public void generateCliente(HayCliente obj){
-        GameObject gmb= Instantiate(prefabs[0], transform.position,Quaternion.identity);
+        GameObject gmb= Instantiate(prefabs[0], transform.position+ new Vector3(0,5,0),Quaternion.identity);
         var cmp=gmb.GetComponent<Cliente>();
         cmp.Start();
         cmp.setZonaCliente(obj);
