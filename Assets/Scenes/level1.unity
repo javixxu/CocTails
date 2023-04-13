@@ -2162,6 +2162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OldSchoolBarstoolNoBack (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8bde7a2dfc7335041bcd7c5e2b0e257b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8bde7a2dfc7335041bcd7c5e2b0e257b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -10711,6 +10715,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OldSchoolBarstoolBacked (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1b743ccd38691d542850f73f43bef3ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1b743ccd38691d542850f73f43bef3ef, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -16639,6 +16647,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031992960}
   m_Mesh: {fileID: 4300028, guid: 8f012fe7536589e4697113c226f5ec0f, type: 3}
+--- !u!1 &1039504381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 2a4091fd6acfbeb468005c5cf0e37038, type: 3}
+  m_PrefabInstance: {fileID: 232905324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1039504384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039504381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2777bba7e4e7c6f4681e3ea77eef5438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 0.79, y: 0.8, z: 0.84}
+  m_Center: {x: 0.03, y: 0.43, z: 0}
+  m_Area: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1055868465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18914,14 +18943,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156010571}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: 0, w: -0.7071068}
   m_LocalPosition: {x: 3.56, y: 2.09, z: 20.03}
   m_LocalScale: {x: 0.84623003, y: 1, z: 0.488125}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 90, y: -180, z: 180}
 --- !u!1001 &1167533456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18994,6 +19023,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 1b743ccd38691d542850f73f43bef3ef, type: 3}
       propertyPath: m_Name
       value: OldSchoolBarstoolBacked (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1b743ccd38691d542850f73f43bef3ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1b743ccd38691d542850f73f43bef3ef, type: 3}
       propertyPath: m_RootOrder
@@ -21575,6 +21608,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8bde7a2dfc7335041bcd7c5e2b0e257b, type: 3}
       propertyPath: m_Name
       value: OldSchoolBarstoolNoBack (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8bde7a2dfc7335041bcd7c5e2b0e257b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8bde7a2dfc7335041bcd7c5e2b0e257b, type: 3}
       propertyPath: m_RootOrder
