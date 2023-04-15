@@ -4,44 +4,59 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using Valve.Newtonsoft.Json.Serialization;
+using Valve.VR.InteractionSystem;
+using static Pedido;
 
 public class Cliente : MonoBehaviour{
-    enum Pedido { Ansioso=0, Normal, Cansado }
-    enum Estado { START=0,IENDO, ESPERANDO }
+    public enum Estado { START=0,IENDO, ESPERANDO,SALIENDO }
 
+    Animator animator;
     HayCliente zona;
-    Pedido estadoPedido;
-    Estado estado;
     NavMeshAgent agent;
+    Pedido pedido;
+
+    Estado estado;
+
+    public GameObject salir;
+
     // Start is called before the first frame update
     public void Start(){
         estado = new Estado();
-        estadoPedido = new Pedido();
-        agent=GetComponent<NavMeshAgent>();       
+
+        agent=GetComponent<NavMeshAgent>();
+        animator= GetComponent<Animator>();
+        pedido= GetComponent<Pedido>();
+
+        init();
     }
 
     private void Update(){
         if (estado == Estado.IENDO){
-            
-        }
-        else{
-            if (estadoPedido == Pedido.Ansioso){
-
+            if ((transform.position - zona.transform.position).magnitude<0.5) { 
+                agent.Stop();
+                agent.enabled = false;
+                animator.StopPlayback();                
+                estado = Estado.ESPERANDO;
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+                transform.position = zona.transform.position;
+                pedido.generarPedido();
+                pedido.activar(true);
             }
-            else if (estadoPedido == Pedido.Normal){
-
-            }
-            else{
-
-            }
-        }
+        }      
     }
 
-    public void setZonaCliente(HayCliente hayCliente) { zona=hayCliente;if (zona == null) Debug.Log("PUTA MIERDA"); }
+    public void setZonaCliente(HayCliente hayCliente) {
+        zona=hayCliente;
+        if (zona == null) Debug.Log("ZONA CLIENTE NULL"); 
+    }
     public void init(){
         estado = Estado.IENDO;
         agent.enabled= true;
         agent.ResetPath();
         agent.SetDestination(zona.transform.position);
+    }
+    public void irme(){
+        agent.enabled = true;
+        agent.SetDestination(salir.transform.position);
     }
 }
