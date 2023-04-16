@@ -30,7 +30,7 @@ public class Pedido : MonoBehaviour
     }
 
     private void Update(){
-        if (irme) return;
+        if (irme||cliente.GetEstado()==Cliente.Estado.IENDO) return;
         esperandoPedido += Time.deltaTime;
 
         if(servido||esperandoPedido / MaxTimePedidoEsperando >= 1.0){
@@ -75,4 +75,5 @@ public class Pedido : MonoBehaviour
         imagenComic.enabled= act;
         imagenCocktail.enabled= act;
     }
+    public bool getIrme() { return irme; }
 }

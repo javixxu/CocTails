@@ -59,4 +59,5 @@ public class Cliente : MonoBehaviour{
         agent.enabled = true;
         agent.SetDestination(salir.transform.position);
     }
+    public Estado GetEstado() { return estado; }
 }

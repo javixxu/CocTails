@@ -7,13 +7,12 @@ public class GenerararClientes : MonoBehaviour
     public List<HayCliente> sitiosClientes;
     private bool generar=false;
     [SerializeField]
-    private int timeToStart = 60;
+    private int timeToStart = 10;
     [SerializeField]
     List<GameObject> prefabs;
     // Start is called before the first frame update
-    void Start()
-    {
-        Invoke("changeGeneration",timeToStart);
+    void Start(){
+        InvokeRepeating("changeGeneration",timeToStart,Random.Range(5,10));
         CanGenrate();
     }    
 
@@ -24,9 +23,12 @@ public class GenerararClientes : MonoBehaviour
         generar = !generar;
     }
     public void CanGenrate(){
+        //if (!generar) return;
         foreach(HayCliente obj in sitiosClientes){
-            if (!obj.hayCliente()){                
+            if (!obj.hayCliente()&&!obj.Asignado()){                
                 generateCliente(obj);
+                obj.setAsignado(true);
+                Debug.Log("Asignado: " + obj.name);
             }
         }
     }
@@ -35,5 +37,16 @@ public class GenerararClientes : MonoBehaviour
         var cmp=gmb.GetComponent<Cliente>();
         cmp.setZonaCliente(obj);
         cmp.salir = GameObject.Find("Salir");
+    }
+    public void generarUnCliente(){
+        foreach (HayCliente obj in sitiosClientes){
+            if (!obj.hayCliente() && !obj.Asignado())
+            {
+                generateCliente(obj);
+                obj.setAsignado(true);
+                Debug.Log("Asignado: " + obj.name);
+                return;
+            }
+        }
     }
 }

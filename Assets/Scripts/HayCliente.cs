@@ -5,11 +5,13 @@ using UnityEngine;
 public class HayCliente : MonoBehaviour
 {
     Cliente clienteSide;
+    [SerializeField]
+    ZonaCopa zonaCopa;
     bool haycliente=false;
-    
+    bool asignado = false;
     private void OnTriggerEnter(Collider other){
         Cliente cmp = other.gameObject.GetComponent<Cliente>();
-        if (haycliente&&cmp!= null) {
+        if (!haycliente&&cmp!= null) {
             haycliente = true;
             clienteSide = cmp;
             //INICIAR EL PEDIDO DEL CLIENTE
@@ -20,10 +22,12 @@ public class HayCliente : MonoBehaviour
         if(clienteSide!=null&&clienteSide.gameObject==other.gameObject){
             clienteSide=null;
             haycliente=false;
-            //Llamar a generador de Cliente;
-            //que el cliente salga del local y se elimine
+            setAsignado(false);
+            Debug.Log("Desasignado: "+gameObject.name);
         }
     }
     public Cliente getCliente() { return clienteSide; }
     public bool hayCliente() { return haycliente; }
+    public bool Asignado() { return asignado; }
+    public void setAsignado(bool act) { asignado = act; }
 }
