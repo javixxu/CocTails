@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Pedido : MonoBehaviour
 {
     public enum EstadoPedido { Bien = 0, Medio, Mal }
-    public enum Cockteles { NULO = 0, BEACH = 1, NOMBRE2 = 2, NOMBRE3 = 3 }
+    public enum Cockteles { NULO = 0, BEACH = 1, DAIKIRI = 2, LIMA = 3 }
 
-    EstadoPedido estado=EstadoPedido.Bien;
+    EstadoPedido estado=EstadoPedido.Bien; 
     Cockteles tipoCocktel=Cockteles.NULO;
 
     float esperandoPedido = 0.0f;
@@ -56,19 +56,19 @@ public class Pedido : MonoBehaviour
         {
             tipoCocktel = Cockteles.BEACH;
             imagenCocktail.sprite = spritesCocktails[0];
-            Debug.Log("BEACH1");
+            //Debug.Log("BEACH");
         }
         else if (rnd == 2)
         {
-            tipoCocktel = Cockteles.NOMBRE2;
+            tipoCocktel = Cockteles.DAIKIRI;
             imagenCocktail.sprite = spritesCocktails[1];
-            Debug.Log("BEACH2");
+            //Debug.Log("DAIKIRI");
         }
         else
         {
-            tipoCocktel = Cockteles.NOMBRE3;
+            tipoCocktel = Cockteles.LIMA;
             imagenCocktail.sprite = spritesCocktails[2];
-            Debug.Log("BEACH3");
+            //Debug.Log("LIMAA");
         }
     }
     public void activar(bool act){

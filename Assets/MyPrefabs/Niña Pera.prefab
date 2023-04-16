@@ -1430,15 +1430,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036bd810ee9713a48bc88d964dc51373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTimePedidoEsperando: 10
+  MaxTimePedidoEsperando: 120
   colorEstado:
   - {r: 0.9339623, g: 0.055479407, b: 0.048460312, a: 1}
   - {r: 0.754717, g: 0.32979256, b: 0, a: 1}
   - {r: 0, g: 0.6132076, b: 0.041535296, a: 1}
   spritesCocktails:
-  - {fileID: 21300000, guid: 3494dc956dfd7174abc07060940a2848, type: 3}
-  - {fileID: 21300000, guid: 3042b019b052942a1baf7aa49d7ca6bb, type: 3}
-  - {fileID: 21300000, guid: ae53a7884da90e94eb5dfeab594b746c, type: 3}
+  - {fileID: 21300000, guid: 40427d8e27375034da3fa880f5c27344, type: 3}
+  - {fileID: 21300000, guid: 8e385774ad503fb41bcc6bb18fef0fe0, type: 3}
+  - {fileID: 21300000, guid: 9b591dfada2a4e64d95516b7014b69da, type: 3}
   imagenComic: {fileID: 1317725394026236011}
   imagenCocktail: {fileID: 3874081755551326932}
 --- !u!195 &1027480920051062152
