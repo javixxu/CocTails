@@ -20,17 +20,19 @@ public class PourDetector : MonoBehaviour
                 StartPour();
             else EndPour();            
         }
+        if (currentStream == null) isPouring = false;
+        if(currentStream!= null) isPouring=true;
     }
 
-   public void StartPour(){
-        Debug.Log("Start Pouring");
+    public void StartPour(){
+        //Debug.Log("Start Pouring");
         currentStream = CreateStream();
         currentStream.Begin();
     }
 
-   public void EndPour(){
+    public void EndPour(){
         if (!isPouring||currentStream==null) return;
-        Debug.Log("End Pouring");
+        //Debug.Log("End Pouring");
         currentStream.End();
         currentStream= null;
     }
@@ -51,9 +53,10 @@ public class PourDetector : MonoBehaviour
         GameObject streamObject= Instantiate(streamPrefab,origin.position,Quaternion.identity,transform);
         return streamObject.GetComponent<Stream>();
     }
-    public void setStop(bool stop) { this.stop= stop; }
-    public bool isStop() { return stop; }
-    public void ispouring(bool act){
-        isPouring = act;
-    }
+    public void SetStop(bool stop) { this.stop= stop; }
+    public void SetPouring(bool act) { isPouring = act; }
+    public bool IsStop() { return stop; }
+    public bool IsPouring() { return isPouring; }
+   
+    public Stream Current() { return currentStream; }
 }

@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class Pedido : MonoBehaviour
 {
     public enum EstadoPedido { Bien = 0, Medio, Mal }
-    public enum Cockteles { NULO = 0, BEACH = 1, DAIKIRI = 2, LIMA = 3 }
+    public enum Cocteles { NULO = 0, BEACH = 1, DAIKIRI = 2, LIMA = 3 }
 
     EstadoPedido estado=EstadoPedido.Bien; 
-    Cockteles tipoCocktel=Cockteles.NULO;
+    Cocteles tipoCocktel=Cocteles.NULO;
 
     float esperandoPedido = 0.0f;
     public float MaxTimePedidoEsperando = 60;
@@ -54,26 +54,28 @@ public class Pedido : MonoBehaviour
         int rnd = Random.Range(1, 4);
         if (rnd == 1)
         {
-            tipoCocktel = Cockteles.BEACH;
+            tipoCocktel = Cocteles.BEACH;
             imagenCocktail.sprite = spritesCocktails[0];
             //Debug.Log("BEACH");
         }
         else if (rnd == 2)
         {
-            tipoCocktel = Cockteles.DAIKIRI;
+            tipoCocktel = Cocteles.DAIKIRI;
             imagenCocktail.sprite = spritesCocktails[1];
             //Debug.Log("DAIKIRI");
         }
         else
         {
-            tipoCocktel = Cockteles.LIMA;
+            tipoCocktel = Cocteles.LIMA;
             imagenCocktail.sprite = spritesCocktails[2];
             //Debug.Log("LIMAA");
         }
+        
     }
     public void activar(bool act){
         imagenComic.enabled= act;
         imagenCocktail.enabled= act;
     }
     public bool getIrme() { return irme; }
+    public Cocteles GetCocteles() { return tipoCocktel; }
 }

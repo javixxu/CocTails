@@ -32,7 +32,7 @@ public class Cliente : MonoBehaviour{
 
     private void Update(){
         if (estado == Estado.IENDO){
-            if ((transform.position - zona.transform.position).magnitude<0.5) { 
+            if ((transform.position - zona.transform.position).magnitude<0.75) { 
                 agent.Stop();
                 agent.enabled = false;
                 animator.StopPlayback();                

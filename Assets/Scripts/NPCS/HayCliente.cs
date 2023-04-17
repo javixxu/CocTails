@@ -6,7 +6,7 @@ public class HayCliente : MonoBehaviour
 {
     Cliente clienteSide;
     [SerializeField]
-    ZonaCopa zonaCopa;
+    DejarCopa zonaCopa;
     bool haycliente=false;
     bool asignado = false;
     private void OnTriggerEnter(Collider other){
@@ -16,6 +16,7 @@ public class HayCliente : MonoBehaviour
             clienteSide = cmp;
             //INICIAR EL PEDIDO DEL CLIENTE
             Debug.Log("cliente en side");
+            zonaCopa.setCoctel(cmp.GetComponent<Pedido>().GetCocteles());
         }
     }
     private void OnTriggerExit(Collider other){
