@@ -6,8 +6,6 @@ TagManager:
   tags:
   - projectile
   - FxTemporaire
-  - Copa2
-  - Cocktelera
   layers:
   - Default
   - TransparentFX
@@ -17,7 +15,7 @@ TagManager:
   - UI
   - Player
   - Suelo
-  - Decoracion
+  - 
   - 
   - 
   - 
