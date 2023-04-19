@@ -8,22 +8,80 @@ public class DejarCopa : MonoBehaviour{
     Cocteles miPedido;
     public List<GameObject> list;
     public GameObject dondeGenerar;
+    GameObject objGenerated;
+
+    Dictionary<Liquid, float> conf = new Dictionary<Liquid, float>();
+
     private void OnTriggerEnter(Collider other){
         var cmp = other.GetComponent<Copa>();
         if (miPedido != Cocteles.NULO&&cmp!=null){
-
+           ResolucionDelPedido(cmp);
         }
     }
     public void setCoctel(Cocteles coctel){
         miPedido = coctel;
         if (miPedido == Cocteles.BEACH){
-            Instantiate<GameObject>(list[0], dondeGenerar.transform.position, dondeGenerar.transform.rotation);
+            objGenerated = Instantiate<GameObject>(list[0], dondeGenerar.transform.position, dondeGenerar.transform.rotation);
+
+            //CONFIGURACION
+            conf.Add(Liquid.VODKA, 200);
+            conf.Add(Liquid.LICOR_FRAMBUESA, 100);
+            conf.Add(Liquid.LICOR_MELOCOTON, 100);
+            conf.Add(Liquid.ZUMO_NARANJA, 100);
+            conf.Add(Liquid.ZUMO_ARANDANOS, 100);
+            //CONFIGURACION
+
         }
         else if (miPedido == Cocteles.DAIKIRI){
-            Instantiate<GameObject>(list[1], dondeGenerar.transform.position, dondeGenerar.transform.rotation);
+            objGenerated = Instantiate<GameObject>(list[1], dondeGenerar.transform.position, dondeGenerar.transform.rotation);
+
+            //CONFIGURACION
+            conf.Add(Liquid.RON, 200);
+            //CONFIGURACION
+
         }
         else{
-            Instantiate<GameObject>(list[2], dondeGenerar.transform.position, dondeGenerar.transform.rotation);
+            objGenerated = Instantiate<GameObject>(list[2], dondeGenerar.transform.position, dondeGenerar.transform.rotation);
+            objGenerated.transform.position=
+                new Vector3(objGenerated.transform.position.x,objGenerated.transform.position.y, 0.737f);
+
+            //CONFIGURACION
+            conf.Add(Liquid.VODKA, 100);
+            conf.Add(Liquid.RON, 100);
+            conf.Add(Liquid.GIN, 100);
+            conf.Add(Liquid.ZUMO_ARANDANOS, 300);
+            //CONFIGURACION
+
+        }
+    }
+    public void eliminarGenerated(){
+        Destroy(objGenerated);
+    }
+    public void ResolucionDelPedido(Copa copa){
+        float percentBueno = 0;bool clavao = true;
+        if (copa.cosasQueActivar.Count == 0) percentBueno = 20.0f;
+        else if (copa.cosasQueActivar.Count < 1) { percentBueno = 10.0f; clavao = false; }
+        else { percentBueno = 5.0f; clavao = false; }
+
+        foreach(var it in conf){
+            if (copa.liquidosInSide.ContainsKey(it.Key)){
+                if (Mathf.Abs( it.Value - copa.liquidosInSide[it.Key])<35.0){
+                    percentBueno += 15;
+                }
+                else{
+                    percentBueno += 5;
+                    clavao = false;
+                }
+            }
+        }
+
+        float rnd=Random.RandomRange(0, 100);
+
+        if (rnd < percentBueno){
+            Debug.Log("Bueno");
+        }
+        else{
+            Debug.Log("Malo");
         }
     }
 }

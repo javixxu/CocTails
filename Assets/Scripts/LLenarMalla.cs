@@ -18,6 +18,7 @@ public class LLenarMalla : MonoBehaviour{
     Vector3 escalar = new Vector3();//mero uso en update no relevancia en nada
     public Vector3 finalTamMesh = new Vector3(1, 1, 1);
 
+    public bool copa = false;
     void Start(){
         meshRenderer = GetComponent<MeshRenderer>();
         liquid = GetComponentInParent<LiquidInSide>();
@@ -28,9 +29,9 @@ public class LLenarMalla : MonoBehaviour{
     }
     private void OnParticleCollision(GameObject other){
         var cmp = other.GetComponentInParent<LiquidInSide>();
-        if (cmp != null && cmp != liquid && (liquid.Inside==Liquid.NULL||cmp.Inside==liquid.Inside)){
+        if (percent < 100f  && cmp != null && cmp != liquid && (liquid.Inside == Liquid.NULL||cmp.Inside==liquid.Inside)){
             LLENAR(cmp);
-        }    
+        }
     }
     public void LLENAR(LiquidInSide other){
         if (!meshRenderer.enabled){
@@ -44,6 +45,14 @@ public class LLenarMalla : MonoBehaviour{
         if (escalarZ) escalar.z = finalTamMesh.z * (percent / 100f);
         transform.localScale = escalar;
         Debug.Log("LLenar: " + percent);
+
+
+
+        if (copa){
+            GetComponentInParent<Copa>().setLiquidos(other.GetComponentInParent<Coctelera>().liquidosInSide);
+        }
+
+
     }
     public void VACIAR(){
         percent -= percentPerColision * Time.deltaTime*12;
@@ -54,7 +63,7 @@ public class LLenarMalla : MonoBehaviour{
         if (escalarZ) escalar.z = finalTamMesh.z * (percent / 100f);
         transform.localScale = escalar;        
 
-        //Debug.Log("Vaciando: " + percent);
+        Debug.Log("Vaciando: " + percent);
     }
     public void reset(){
         meshRenderer.enabled = false;        

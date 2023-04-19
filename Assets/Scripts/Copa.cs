@@ -6,7 +6,7 @@ public class Copa : MonoBehaviour{
 
     public ZonaCopa colocar;  
     public List<TipoObjecto> cosasQueActivar;
-
+    public Dictionary<Liquid, float> liquidosInSide = new Dictionary<Liquid, float>();
     void Start(){        
         colocar.setCopa(this);        
     }       
@@ -26,5 +26,8 @@ public class Copa : MonoBehaviour{
                 return true;
         }
         return false;
-    }    
+    }   
+    public void setLiquidos(Dictionary<Liquid, float> liquidosInSide) { 
+        this.liquidosInSide = liquidosInSide; 
+    }
 }

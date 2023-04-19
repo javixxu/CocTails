@@ -24,6 +24,7 @@ public class HayCliente : MonoBehaviour
             clienteSide=null;
             haycliente=false;
             setAsignado(false);
+            zonaCopa.eliminarGenerated();
             Debug.Log("Desasignado: "+gameObject.name);
         }
     }

@@ -8,7 +8,8 @@ public class ZonaCopa : MonoBehaviour{
 
     private void OnTriggerEnter(Collider other){
         var tipo = other.GetComponent<TipoObjecto>();
-        if (tipo != null && miCopa.isValid(tipo.myType)){         
+        if (tipo != null && miCopa.isValid(tipo.myType) && other.GetComponent<Interactable>().attachedToHand.ObjectIsAttached(other.gameObject))
+        {         
             //other.transform.SetParent(miCopa.transform);
             //quitar el objecto de la lista
             miCopa.quitarTipo(tipo.myType);

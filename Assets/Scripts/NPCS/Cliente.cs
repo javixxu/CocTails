@@ -42,7 +42,11 @@ public class Cliente : MonoBehaviour{
                 pedido.generarPedido();
                 pedido.activar(true);
             }
-        }      
+        }
+        else if (estado == Estado.ESPERANDO){
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.position = zona.transform.position;
+        }
     }
 
     public void setZonaCliente(HayCliente hayCliente) {
