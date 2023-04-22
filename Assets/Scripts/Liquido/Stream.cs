@@ -53,8 +53,8 @@ public class Stream : MonoBehaviour
     Vector3 FindEndPoint(){
         RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);
-        Physics.Raycast(ray, out hit,20.0f);
-        Vector3 endPoint = hit.collider ? hit.point :ray.GetPoint(20.0f);
+        Physics.Raycast(ray, out hit,60.0f);
+        Vector3 endPoint = hit.collider ? hit.point :ray.GetPoint(60.0f);
         return endPoint;
     }
 

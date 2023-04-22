@@ -11,14 +11,18 @@ public class PourDetector : MonoBehaviour
     bool stop = false;
     Stream currentStream;
 
+    [SerializeField]
+    bool NoRotacion=false;
+
     private void Update(){
         if (stop) return;
-        bool pourCheck = CalculatePourAngle() < pourThreshold;
+        bool pourCheck = CalculatePourAngle() > pourThreshold;
         if(isPouring != pourCheck){
             isPouring = pourCheck;
-            if (isPouring&&currentStream==null) 
+            if (currentStream==null) 
                 StartPour();
-            else EndPour();            
+            else 
+                EndPour();            
         }
         if (currentStream == null) isPouring = false;
         if(currentStream!= null) isPouring=true;
@@ -31,7 +35,7 @@ public class PourDetector : MonoBehaviour
     }
 
     public void EndPour(){
-        if (!isPouring||currentStream==null) return;
+        if (currentStream==null) return;
         //Debug.Log("End Pouring");
         currentStream.End();
         currentStream= null;
@@ -46,7 +50,9 @@ public class PourDetector : MonoBehaviour
     }
 
     float CalculatePourAngle(){
-        return transform.forward.y * Mathf.Rad2Deg;
+        //Debug.Log(Vector3.Angle(transform.forward, Vector3.up));        
+       if(!NoRotacion) return Vector3.Angle(transform.forward, Vector3.up);
+       else return Vector3.Angle(transform.up, Vector3.up);
     }
 
     Stream CreateStream(){
