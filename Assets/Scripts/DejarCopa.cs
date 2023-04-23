@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 using static Pedido;
 
 public class DejarCopa : MonoBehaviour{
@@ -9,14 +10,15 @@ public class DejarCopa : MonoBehaviour{
     public List<GameObject> list;
     public GameObject dondeGenerar;
     GameObject objGenerated;
-
+    Cliente cliente;
     Dictionary<Liquid, float> conf = new Dictionary<Liquid, float>();
 
+    private GameObject obj;
     private void OnTriggerEnter(Collider other){
         var cmp = other.GetComponent<Copa>();
         if (miPedido != Cocteles.NULO&&cmp!=null){
-            if (other.GetComponentInChildren<LLenarMalla>().getPercent() > 50)
-            {
+            if (other.GetComponentInChildren<LLenarMalla>().getPercent() > 50){
+
                 ResolucionDelPedido(cmp);
             }
             else Debug.Log("Es necesario rellenar la copa");
@@ -87,6 +89,20 @@ public class DejarCopa : MonoBehaviour{
         }
         else{
             Debug.Log("Malo");
+        }
+
+        obj = copa.gameObject;
+        Invoke("salirme", 1.5f);
+    }
+   public void setCliente(Cliente cliente) { this.cliente = cliente; }
+    public void salirme(){
+        desactivar();
+        cliente.irme();
+        cliente.GetComponent<Pedido>().activar(false);
+    }
+    void desactivar(){
+        if (obj.GetComponent<Interactable>().attachedToHand.ObjectIsAttached(obj)){
+            obj.GetComponent<Interactable>().attachedToHand.DetachObject(obj);
         }
     }
 }

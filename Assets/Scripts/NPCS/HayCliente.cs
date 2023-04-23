@@ -9,6 +9,7 @@ public class HayCliente : MonoBehaviour
     DejarCopa zonaCopa;
     bool haycliente=false;
     bool asignado = false;
+
     private void OnTriggerEnter(Collider other){
         Cliente cmp = other.gameObject.GetComponent<Cliente>();
         if (!haycliente&&cmp!= null) {
@@ -17,6 +18,7 @@ public class HayCliente : MonoBehaviour
             //INICIAR EL PEDIDO DEL CLIENTE
             Debug.Log("cliente en side");
             zonaCopa.setCoctel(cmp.GetComponent<Pedido>().GetCocteles());
+            zonaCopa.setCliente(clienteSide);
         }
     }
     private void OnTriggerExit(Collider other){
@@ -25,10 +27,10 @@ public class HayCliente : MonoBehaviour
             haycliente=false;
             setAsignado(false);
             zonaCopa.eliminarGenerated();
+            zonaCopa.setCliente(clienteSide);
             Debug.Log("Desasignado: "+gameObject.name);
         }
     }
-    public Cliente getCliente() { return clienteSide; }
     public bool hayCliente() { return haycliente; }
     public bool Asignado() { return asignado; }
     public void setAsignado(bool act) { asignado = act; }

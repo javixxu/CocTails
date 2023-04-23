@@ -59,9 +59,10 @@ public class Cliente : MonoBehaviour{
         agent.ResetPath();
         agent.SetDestination(zona.transform.position);
     }
-    public void irme(){
+    public void irme(){        
         agent.enabled = true;
         agent.SetDestination(salir.transform.position);
+        estado = Estado.SALIENDO;
     }
     public Estado GetEstado() { return estado; }
 }

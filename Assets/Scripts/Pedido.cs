@@ -20,7 +20,6 @@ public class Pedido : MonoBehaviour
     public Image imagenCocktail;
 
     bool servido=false;
-    bool irme=false;
 
     Cliente cliente;
 
@@ -30,11 +29,10 @@ public class Pedido : MonoBehaviour
     }
 
     private void Update(){
-        if (irme||cliente.GetEstado()==Cliente.Estado.IENDO) return;
+        if (cliente.GetEstado()==Cliente.Estado.SALIENDO || cliente.GetEstado()==Cliente.Estado.IENDO) return;
         esperandoPedido += Time.deltaTime;
 
         if(servido||esperandoPedido / MaxTimePedidoEsperando >= 1.0){
-            irme=true;
             cliente.irme();
             activar(false);
         }   
@@ -76,6 +74,5 @@ public class Pedido : MonoBehaviour
         imagenComic.enabled= act;
         imagenCocktail.enabled= act;
     }
-    public bool getIrme() { return irme; }
     public Cocteles GetCocteles() { return tipoCocktel; }
 }
