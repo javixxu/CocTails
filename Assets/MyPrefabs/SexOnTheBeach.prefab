@@ -971,7 +971,7 @@ MonoBehaviour:
   pourThreshold: 45
   origin: {fileID: 781393296075709548}
   streamPrefab: {fileID: 5238570228697279498, guid: 7bdc8ebc399271048864d42f962c30d4, type: 3}
-  NoMorro: 0
+  Rotacion: 0
 --- !u!114 &781393296047686404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1624,7 +1624,7 @@ MonoBehaviour:
   pourThreshold: 45
   origin: {fileID: 781393297633240118}
   streamPrefab: {fileID: 5238570228697279498, guid: 7bdc8ebc399271048864d42f962c30d4, type: 3}
-  NoMorro: 0
+  Rotacion: 0
 --- !u!54 &781393296614213932
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1986,7 +1986,7 @@ MonoBehaviour:
   pourThreshold: 45
   origin: {fileID: 781393295858983682}
   streamPrefab: {fileID: 5238570228697279498, guid: 7bdc8ebc399271048864d42f962c30d4, type: 3}
-  NoMorro: 1
+  Rotacion: 1
 --- !u!1 &781393296797501706
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,7 +2274,7 @@ MonoBehaviour:
   pourThreshold: 45
   origin: {fileID: 781393295795487591}
   streamPrefab: {fileID: 5238570228697279498, guid: 7bdc8ebc399271048864d42f962c30d4, type: 3}
-  NoMorro: 0
+  Rotacion: 0
 --- !u!114 &781393296877373746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2455,7 +2455,7 @@ MonoBehaviour:
   pourThreshold: 45
   origin: {fileID: 781393296128565143}
   streamPrefab: {fileID: 5238570228697279498, guid: 7bdc8ebc399271048864d42f962c30d4, type: 3}
-  NoMorro: 0
+  Rotacion: 0
 --- !u!114 &781393296900837500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2903,11 +2903,12 @@ GameObject:
   - component: {fileID: 781393296929042769}
   - component: {fileID: 781393296929042778}
   - component: {fileID: 781393296929042779}
+  - component: {fileID: 1651673888309199517}
   - component: {fileID: 781393296929042772}
+  - component: {fileID: 1804834794194930171}
   - component: {fileID: 781393296929042773}
   - component: {fileID: 781393296929042777}
   - component: {fileID: 8497003209782976054}
-  - component: {fileID: 1651673888309199517}
   - component: {fileID: 3128797839730496571}
   - component: {fileID: 6375060125142762866}
   m_Layer: 0
@@ -2988,6 +2989,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &1651673888309199517
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781393296929042770}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &781393296929042772
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3002,6 +3019,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2899093438356203920, guid: ce01be085c56dc94aae381b84e187776, type: 3}
+--- !u!65 &1804834794194930171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781393296929042770}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.003989988, y: 0.00048418585, z: 0.00399401}
+  m_Center: {x: -0.0000040311706, y: -0.0045623933, z: 1.2013808e-12}
 --- !u!114 &781393296929042773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3085,22 +3115,6 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!54 &1651673888309199517
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781393296929042770}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!114 &3128797839730496571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4152,7 +4166,7 @@ MonoBehaviour:
   pourThreshold: 45
   origin: {fileID: 781393297482453006}
   streamPrefab: {fileID: 5238570228697279498, guid: 7bdc8ebc399271048864d42f962c30d4, type: 3}
-  NoMorro: 0
+  Rotacion: 0
 --- !u!114 &781393297594679451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4685,7 +4699,7 @@ MonoBehaviour:
   pourThreshold: 45
   origin: {fileID: 781393297118002065}
   streamPrefab: {fileID: 5238570228697279498, guid: 7bdc8ebc399271048864d42f962c30d4, type: 3}
-  NoMorro: 1
+  Rotacion: 1
 --- !u!114 &781393297819277324
 MonoBehaviour:
   m_ObjectHideFlags: 0

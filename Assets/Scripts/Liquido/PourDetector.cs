@@ -12,7 +12,7 @@ public class PourDetector : MonoBehaviour
     Stream currentStream;
 
     [SerializeField]
-    bool NoRotacion=false;
+    bool Rotacion=false;
 
     private void Update(){
         if (stop) return;
@@ -51,7 +51,7 @@ public class PourDetector : MonoBehaviour
 
     float CalculatePourAngle(){
         //Debug.Log(Vector3.Angle(transform.forward, Vector3.up));        
-       if(!NoRotacion) return Vector3.Angle(transform.forward, Vector3.up);
+       if(!Rotacion) return Vector3.Angle(transform.forward, Vector3.up);
        else return Vector3.Angle(transform.up, Vector3.up);
     }
 

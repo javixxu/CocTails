@@ -12,8 +12,9 @@ public class GenerararClientes : MonoBehaviour
     List<GameObject> prefabs;
     // Start is called before the first frame update
     void Start(){
-        InvokeRepeating("changeGeneration",timeToStart,Random.Range(5,10));
-        CanGenrate();
+       // InvokeRepeating("changeGeneration",timeToStart,Random.Range(5,10));
+        changeGeneration();
+        Invoke("CanGenerate", 2);
     }    
 
     public void setGeneration(bool generar){
@@ -22,13 +23,15 @@ public class GenerararClientes : MonoBehaviour
     public void changeGeneration(){
         generar = !generar;
     }
-    public void CanGenrate(){
-        //if (!generar) return;
+    public void CanGenerate(){
+        if (!generar) return;
         foreach(HayCliente obj in sitiosClientes){
             if (!obj.hayCliente()&&!obj.Asignado()){                
                 generateCliente(obj);
                 obj.setAsignado(true);
                 Debug.Log("Asignado: " + obj.name);
+                Invoke("CanGenerate", Random.Range(20,45));
+                return;
             }
         }
     }

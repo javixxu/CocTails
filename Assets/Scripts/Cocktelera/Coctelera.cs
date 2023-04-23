@@ -6,7 +6,7 @@ public class Coctelera : MonoBehaviour{
     public Dictionary<Liquid, float> liquidosInSide = new Dictionary<Liquid, float>();
     CocteleraRelleno cocteleraRelleno;
     LiquidInSide liquid;
-
+    [SerializeField]
     float percentField = 300.0f; //porcentaje minimo con el k se puede hechar liquido
     PourDetector detector;
 

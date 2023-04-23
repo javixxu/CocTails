@@ -8,7 +8,10 @@ public class DestruirClientes : MonoBehaviour{
         var cmp = other.GetComponent<Pedido>();
         if (cmp != null && cmp.getIrme()){
             Destroy(other.gameObject);
-            generar.generarUnCliente();
+            Invoke("Generar",Random.Range(25,45));
         }
+    }
+    void Generar(){
+        generar.generarUnCliente();
     }
 }
