@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 6878869177336248210}
   - component: {fileID: 7857914935035084684}
   - component: {fileID: 3922317814968645441}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zona
   m_TagString: Untagged
   m_Icon: {fileID: 0}

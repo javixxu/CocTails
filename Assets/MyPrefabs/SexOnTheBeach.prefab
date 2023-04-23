@@ -4000,7 +4000,7 @@ GameObject:
   - component: {fileID: 781393297487657311}
   - component: {fileID: 781393297487657309}
   - component: {fileID: 781393297487657310}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: ZonaCopa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
