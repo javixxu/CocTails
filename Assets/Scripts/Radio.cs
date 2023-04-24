@@ -44,12 +44,12 @@ public class Radio : MonoBehaviour
         //}
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        // Si el usuario está agarrando el dial, actualiza su posición
-        //if (other.CompareTag("Hand"))
-        //{
-        //    //previousPosition = other.transform.position;
-        //}
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    // Si el usuario está agarrando el dial, actualiza su posición
+    //    //if (other.CompareTag("Hand"))
+    //    //{
+    //    //    //previousPosition = other.transform.position;
+    //    //}
+    //}
 }

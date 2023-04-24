@@ -40,21 +40,21 @@ public class ButtonRadio : MonoBehaviour
     {
         isHandOver = false;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (/*other.gameObject.GetComponent<Hand>()!=null*/other.CompareTag("Hand"))
-        {
-            Debug.Log("BOTON PULSADO");
-            if (power)
-            {
-                radio.audioSource.Stop();
-            }
-            else
-            {
-                int i = (radio.index + 1) % 4;
-                radio.index = i;
-                radio.audioSource.clip = radio.songs[i];
-            }
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (/*other.gameObject.GetComponent<Hand>()!=null*/other.CompareTag("Hand"))
+    //    {
+    //        Debug.Log("BOTON PULSADO");
+    //        if (power)
+    //        {
+    //            radio.audioSource.Stop();
+    //        }
+    //        else
+    //        {
+    //            int i = (radio.index + 1) % 4;
+    //            radio.index = i;
+    //            radio.audioSource.clip = radio.songs[i];
+    //        }
+    //    }
+    //}
 }
