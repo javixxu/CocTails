@@ -14,6 +14,12 @@ public class DejarCopa : MonoBehaviour{
     Dictionary<Liquid, float> conf = new Dictionary<Liquid, float>();
 
     private GameObject obj;
+    GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = GameManager.GetInstance();
+    }
     private void OnTriggerEnter(Collider other){
         var cmp = other.GetComponent<Copa>();
         if (miPedido != Cocteles.NULO&&cmp!=null){
@@ -86,11 +92,17 @@ public class DejarCopa : MonoBehaviour{
 
         if (rnd < percentBueno){
             Debug.Log("Bueno");
+            if (miPedido == Cocteles.BEACH) gameManager.AddPoints(210);
+            else if (miPedido == Cocteles.LIMA) gameManager.AddPoints(150);
+            if (miPedido == Cocteles.DAIKIRI) gameManager.AddPoints(55);
         }
         else{
             Debug.Log("Malo");
+            if (miPedido == Cocteles.BEACH) gameManager.AddPoints(-100);
+            else if (miPedido == Cocteles.LIMA) gameManager.AddPoints(-75);
+            if (miPedido == Cocteles.DAIKIRI) gameManager.AddPoints(-46);
         }
-
+        gameManager.UpdatePoints();
         obj = copa.gameObject;
         Invoke("salirme", 1.5f);
     }
