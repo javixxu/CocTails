@@ -22,8 +22,9 @@ public class Pedido : MonoBehaviour
     bool servido=false;
 
     Cliente cliente;
-
+    GameManager gameManager;
     private void Start(){
+        gameManager = GameManager.GetInstance();
         cliente = GetComponentInParent<Cliente>();
         activar(false);
     }
@@ -33,6 +34,11 @@ public class Pedido : MonoBehaviour
         esperandoPedido += Time.deltaTime;
 
         if(servido||esperandoPedido / MaxTimePedidoEsperando >= 1.0){
+
+            if (tipoCocktel == Cocteles.BEACH) gameManager.AddPoints(-100);
+            else if (tipoCocktel == Cocteles.LIMA) gameManager.AddPoints(-75);
+            if (tipoCocktel == Cocteles.DAIKIRI) gameManager.AddPoints(-46);
+            gameManager.UpdatePoints();
             cliente.irme();
             activar(false);
         }   

@@ -1428,7 +1428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036bd810ee9713a48bc88d964dc51373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTimePedidoEsperando: 300
+  MaxTimePedidoEsperando: 75
   colorEstado:
   - {r: 0.9339623, g: 0.055479407, b: 0.048460312, a: 1}
   - {r: 0.754717, g: 0.32979256, b: 0, a: 1}

@@ -22,9 +22,8 @@ public class DejarCopa : MonoBehaviour{
     }
     private void OnTriggerEnter(Collider other){
         var cmp = other.GetComponent<Copa>();
-        if (miPedido != Cocteles.NULO&&cmp!=null){
+        if (miPedido != Cocteles.NULO && cmp!=null && cliente!=null){
             if (other.GetComponentInChildren<LLenarMalla>().getPercent() > 50){
-
                 ResolucionDelPedido(cmp);
             }
             else Debug.Log("Es necesario rellenar la copa");
@@ -32,6 +31,7 @@ public class DejarCopa : MonoBehaviour{
     }
     public void setCoctel(Cocteles coctel){
         miPedido = coctel;
+        conf.Clear();
         if (miPedido == Cocteles.BEACH){
             objGenerated = Instantiate<GameObject>(list[0], dondeGenerar.transform.position, dondeGenerar.transform.rotation);
 
@@ -104,7 +104,7 @@ public class DejarCopa : MonoBehaviour{
         }
         gameManager.UpdatePoints();
         obj = copa.gameObject;
-        Invoke("salirme", 1.5f);
+        Invoke("salirme", 1.0f);
     }
    public void setCliente(Cliente cliente) { this.cliente = cliente; }
     public void salirme(){

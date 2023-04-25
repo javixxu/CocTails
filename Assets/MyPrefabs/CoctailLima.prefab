@@ -2873,6 +2873,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2183596030566026503}
+  - component: {fileID: 8508781846265194683}
   m_Layer: 0
   m_Name: CoctailLima
   m_TagString: Untagged
@@ -2904,6 +2905,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8508781846265194683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8107474513808479676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12cacbf92ff00e4ebd5f8367569805f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hijos:
+  - {fileID: 2544631573363552807}
+  - {fileID: 1753789295453789695}
+  - {fileID: 7572897839105411497}
+  - {fileID: 6307748731988773971}
+  - {fileID: 7636632993809795719}
+  - {fileID: 3067576064268150356}
+  - {fileID: 5853128100269228215}
 --- !u!1 &8344133218019245688
 GameObject:
   m_ObjectHideFlags: 0
