@@ -23,7 +23,7 @@ public class DejarCopa : MonoBehaviour{
     private void OnTriggerEnter(Collider other){
         var cmp = other.GetComponent<Copa>();
         if (miPedido != Cocteles.NULO && cmp!=null && cliente!=null){
-            if (other.GetComponentInChildren<LLenarMalla>().getPercent() > 50){
+            if (other.GetComponentInChildren<LLenarMalla>().getPercent() > 25){
                 ResolucionDelPedido(cmp);
             }
             else Debug.Log("Es necesario rellenar la copa");

@@ -2496,7 +2496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dee26a381d567344a1798c1ffe11054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  percentPerColision: 0.5
+  percentPerColision: 1
   NumOnzasMaximas: 5
   escalarX: 0
   escalarY: 0
@@ -2549,7 +2549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a01299a2d95242498057078e97d23bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  percentField: 300
+  percentField: 100
 --- !u!114 &2089001853636732468
 MonoBehaviour:
   m_ObjectHideFlags: 0
