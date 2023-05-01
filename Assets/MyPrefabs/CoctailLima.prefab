@@ -1047,6 +1047,7 @@ GameObject:
   - component: {fileID: 5331306578180234888}
   - component: {fileID: 1498267725474785589}
   - component: {fileID: 5643707851983498175}
+  - component: {fileID: 1984070029590022484}
   m_Layer: 0
   m_Name: Bengala
   m_TagString: Untagged
@@ -1206,6 +1207,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!65 &1984070029590022484
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307336706383161769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.99, y: 2.03, z: 2.37}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3377912588100149614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,7 +1845,6 @@ GameObject:
   - component: {fileID: 3267994049289950142}
   - component: {fileID: 2451588449461731065}
   - component: {fileID: 6179321973874142461}
-  - component: {fileID: 9216374749759016084}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1904,19 +1917,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9216374749759016084
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5211720963494659006}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.00002, y: 2.0000002, z: 3.000002}
-  m_Center: {x: 0.000000059604645, y: -0.0000076293945, z: 0.000030428171}
 --- !u!1 &5675873209530504965
 GameObject:
   m_ObjectHideFlags: 0
